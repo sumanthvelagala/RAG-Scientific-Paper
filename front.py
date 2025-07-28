@@ -37,7 +37,7 @@ if pdf_files:
             
         # Filter Chunks by Section Title
         st.subheader(":material/search: Filter Chunks by Section Title")
-        titles = list(set(title for title, _ in chuncked_data))  # Unique titles
+        titles = list(set(title for title, _ in chuncked_data))  
         title_to_search = st.selectbox("Select a section title:", sorted(titles))
 
         matching_chunks = [chunk for title, chunk in chuncked_data if title == title_to_search]
@@ -65,7 +65,7 @@ if st.button("Search") and query:
             for i, result in enumerate(results, 1):
                 st.markdown(f"### 🔹 {i}.")
                 st.write(result['chunk'])
-                st.write(f"📄 PDF ID: {result['pdf_id']}")
+                st.write(f"PDF ID: {result['pdf_id']}")
 
               
                 st.session_state.context += (
